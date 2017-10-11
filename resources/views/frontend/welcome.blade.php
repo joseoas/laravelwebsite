@@ -18,14 +18,16 @@
                                         Somos una empresa que tiene un enlace directo con vendedores oficiales de isapre de todas las sucursales del país. Llena el formulario, compara y adhiérete a la isapre que se ajuste a tus necesidades.
                                         <hr>
                                     </p>
-                                    <img src="{{asset('images/img.png')}}" width="265" height="150">
+                                    <div class="">
+                                        <img src="{{asset('images/imgfront.png')}}" alt="cotiza gratis tu isapre">
+                                    </div>
                                     <div class="row text-left">
                                         <div class="col-md-1 ">
                                               <h4><span class="red">1</span></h4>
                                         </div><!--FIN col inf-->
 
                                         <div class="col-md-11 text-left">
-                                             <p class="lead"> Selecciona las isapres en las cuales te interesa cotizar</p>
+                                             <p class="lead"> Selecciona las isapres en las cuales te interesa cotizar.</p>
                                         </div><!--FIN col inf-->
                                     </div><!--FIN ROW-->
 
@@ -55,7 +57,7 @@
                                         </div><!--FIN col inf-->
 
                                         <div class="col-md-11 text-left">
-                                             <p class="lead">  Los ejecutivo tomara contacto con usted </p>
+                                             <p class="lead">  Los ejecutivos tomaran contacto con usted</p>
                                         </div><!--FIN col inf-->
                                     </div><!--FIN ROW-->
 
@@ -233,28 +235,77 @@
 
                                    <div class="row">
                                       <div class="col">
-                                          <input type="text" name="nombre" class="form-control" placeholder="Nombre Completo"><br>
+                                          <div class="form-group text-left">
+                                              <input type="text" name="nombre" class="form-control" placeholder="Nombre Completo"> 
+                                                  @if ($errors->has('nombre'))
+                                                    <span class="help-block text-success">
+                                                        * Este campo es obligatorio
+                                                    </span>
+                                                  @endif 
+                                          </div>
                                      </div>
                                  </div>
 
                                   <div class="row">
                                             <div class="col">
-                                                  <input type="text" name="telefono" class="form-control" placeholder="Telefono"><br>
+                                                <div class="form-group text-left">
+                                                      <input type="text" name="telefono" class="form-control" placeholder="Telefono">
+                                                        @if ($errors->has('telefono'))
+                                                          <span class="help-block text-success">
+                                                            * Este campo es obligatorio
+                                                          </span>
+                                                        @endif 
+                                                </div>
                                             </div>
                                             <div class="col">
-                                                  <input type="text" name="email" class="form-control" placeholder="E-Mail"><br>
+
+                                                <div class="form-group text-left">
+                                                        <input type="text" name="email" class="form-control" placeholder="E-Mail">
+                                                        @if ($errors->has('email'))
+                                                          <span class="help-block text-success">
+                                                            * Este campo es obligatorio
+                                                          </span>
+                                                        @endif 
+                                                </div>
+
                                             </div> 
                                   </div><!--FIN ROW2-->
 
                                   <div class="row">
                                       <div class="col">
-                                             <input type="text" name="ciudad" class="form-control" placeholder="Ciudad y Comuna"><br>
-                                     </div>
+                                                 <div class="form-group text-left">
+                                                        <input type="text" name="ciudad" class="form-control" placeholder="Ciudad y Comuna">
+                                                        @if ($errors->has('ciudad'))
+                                                          <span class="help-block text-success">
+                                                        * Este campo es obligatorio
+                                                          </span>
+                                                        @endif 
+                                                </div>
+                                      </div>
+                                          <div class="col">
+                                                 <div class="form-group text-left">
+                                                        <input type="text" name="renta" class="form-control" placeholder="Renta Liquida">
+                                                        @if ($errors->has('renta'))
+                                                          <span class="help-block text-success">
+                                                        * Este campo es obligatorio
+                                                          </span>
+                                                        @endif 
+                                          </div>
+                                      </div>
                                   </div>
 
                                   <div class="row">
                                       <div class="col">
-                                              <textarea  type="text" name="contenido" placeholder=" Cuentanos tu caso" class="form-control"  rows="5" ></textarea>
+                                 
+
+                                                <div class="form-group text-left">
+                                                        <textarea  type="text" name="contenido" placeholder=" Cuentanos tu caso" class="form-control"  rows="5" ></textarea>                          
+                                                        @if ($errors->has('contenido'))
+                                                          <span class="help-block text-success">
+                                                          * Este campo es obligatorio
+                                                          </span>
+                                                        @endif 
+                                                </div>
                                      </div>
                                   </div>
                                   <br>
@@ -262,21 +313,19 @@
                                       <div class="col">
                                           <p class="lead text-left">
                                             <button type="submit" class="btn btn-lg btn-outline-success"> <i class="fa fa-paper-plane" aria-hidden="true"> </i> Solicitar Cotizacion</button>
+
+                                              @include('messaje.messajeflash')
+
                                           </p>
                                      </div>
                                   </div>
 
                                
                             </form>
-                            @if ($errors->any())
-                              <div class=" text-left">
-                                  <ul>
-                                      @foreach ($errors->all() as $error)
-                                          <li>{{ $error }}</li>
-                                      @endforeach
-                                  </ul>
-                              </div>
-                          @endif
+
+
+
+
               </div> <!-- COL-MD-6 -->
 
             </div> <!-- FIN ROW-->
@@ -299,19 +348,19 @@
             <br>
             <div class="row ">
                 <div class="col">
-                    <h1><i class="fa fa-bolt fa-3x color_icon" aria-hidden="true"></i></h1>
+                    <h1><i class="fa fa-bolt fa-3x color_icon_front" aria-hidden="true"></i></h1>
                     <p class="lead"><strong>Rápido</strong></p>
                 </div>
                 <div class="col">
-                    <h1><i class="fa fa-sign-language fa-3x color_icon" aria-hidden="true"></i></h1>
+                    <h1><i class="fa fa-sign-language fa-3x color_icon_front" aria-hidden="true"></i></h1>
                     <p class="lead"><strong>Fácil</strong></p>
                 </div>
                 <div class="col">
-                    <h1><i class="fa fa-unlock-alt fa-3x color_icon" aria-hidden="true"></i></h1>
+                    <h1><i class="fa fa-unlock-alt fa-3x color_icon_front" aria-hidden="true"></i></h1>
                     <p class="lead"><strong>Seguro</strong></p>
                 </div>
                   <div class="col">
-                    <h1><i class="fa fa-handshake-o fa-3x color_icon" aria-hidden="true"></i></h1>
+                    <h1><i class="fa fa-handshake-o fa-3x color_icon_front" aria-hidden="true"></i></h1>
                     <p class="lead"><strong>Profesional</strong></p>
                 </div>
 
@@ -326,15 +375,15 @@
             <div class="row text-center">
 
               <div class="col">
-                    <img src="{{asset('images/banmedica.png')}}" height="50" width="180">
+                    <img src="{{asset('images/banmedica.png')}}" height="50" width="180" alt="isapre banmedica">
               </div>
 
               <div class="col">
-                <img src="{{asset('images/cruzblanca.png')}}" height="50" width="180">
+                <img src="{{asset('images/cruzblanca.png')}}" height="50" width="180" alt="isapre cruzblanca">
               </div>
 
               <div class="col">
-                 <img src="{{asset('images/vidatres.png')}}" height="50" width="180">
+                 <img src="{{asset('images/vidatres.png')}}" height="50" width="180" alt="isapre vidatres">
               </div>
 
             </div>
@@ -342,15 +391,15 @@
              <div class="row text-center">
 
               <div class="col">
-                    <img src="{{asset('images/colmena.png')}}" height="50" width="180">
+                    <img src="{{asset('images/colmena.png')}}" height="50" width="180" alt="isapre colmena">
               </div>
               
               <div class="col">
-                <img src="{{asset('images/consalud.png')}}" height="50" width="180">
+                <img src="{{asset('images/consalud.png')}}" height="50" width="180" alt="isapre consalud">
               </div>
 
               <div class="col">
-                 <img src="{{asset('images/masvida.png')}}" height="50" width="180">
+                 <img src="{{asset('images/masvida.png')}}" height="50" width="180" alt="isapre MasVida">
               </div>
 
             </div>

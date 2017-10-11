@@ -1,9 +1,11 @@
 
 .color_icon{
-  color:#FF0040;
+  color:#848484;
 }
 
-
+.color_icon_front{
+  color:#FF0040;
+}
 .margen{
 	margin-right:5px;
 	margin-bottom:3px;

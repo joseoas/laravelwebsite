@@ -24,6 +24,8 @@
 										      <th>Email</th>
 										      <th>Fono</th>
 										      <th>Fecha</th>
+										      <th>Accion</th>
+
 										    </tr>
 										  </thead>
 										  <tbody>
@@ -32,24 +34,24 @@
 										    	    <tr>
 												      <th scope="row">{{$key}}</th>
 												      <td>{{$email->name_email}}</td>
-												      <td>{{$email->name_email}}</td>
-												      <td>{{$email->phone_emai}}</td>												     <td>{{$email->created_at}}</td>
-
+												      <td>{{$email->email_email}}</td>
+												      <td>{{$email->phone_email}}</td>
+												      <td>{{$email->created_at}}</td>
 												      <td>
-												      		<div class="row">
-												      			<div class="col-md-3 text-lefet">
-												      				<a href="#"	class="btn btn-info">
-												      					<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar
-												      				</a>
-												      			</div>
 
-												      			<div class="col-md-9 text-left">
-												      				<form action="#" method="POST">
-															      		{{csrf_field()}}
-															      		{{method_field('DELETE')}}
-															      		<button class="btn btn-danger" type="submit"><i class="fa fa-eraser" aria-hidden="true"></i> Eliminar</button>
-												      				</form>
-												      			</div>
+												      <form action="#" method="POST">
+													      	<a href="#"	class="btn btn-success btn-sm">
+													      		<i class="fa fa-envelope-open" aria-hidden="true"></i> Ver
+													      	</a>
+													      			
+													      	<a href="#"	class="btn btn-info btn-sm">
+													      		<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar
+													      	</a>
+															{{csrf_field()}}
+															{{method_field('DELETE')}}
+															<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-eraser" aria-hidden="true"></i> Eliminar</button>
+												      </form>
+												      		
 
 												      		</div>
 												

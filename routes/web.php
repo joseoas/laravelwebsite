@@ -14,11 +14,13 @@
 Auth::routes();
 
 Route::group(['namespace'=>'Frontend'],function(){
-	Route::get('/', function () {
-	    return view('frontend.welcome');
-	});
+	Route::get('/', function () { return view('frontend.welcome'); })->name('index');
+
 });
 
+Route::group(['namespace'=>'Backend'],function(){
+	Route::post('emails/add','EmailController@EmailAddPost')->name('emails.add');
+});
 
 Route::group(['middleware' => 'auth'], function () {
 		  Route::group(['namespace'=>'Backend'],function(){
@@ -52,8 +54,6 @@ Route::group(['middleware' => 'auth'], function () {
 			| VENDEDORES
 			|--------------------------------------------------------------------------
 			*/
-
 			Route::get('/emails','EmailController@EmailIndex')->name('emails.index');
-			Route::post('emails/add','EmailController@EmailAddPost')->name('emails.add');
 		});
  });

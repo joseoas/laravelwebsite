@@ -10,7 +10,7 @@ use App\Http\Requests\EmailRequest;
 class EmailController extends Controller
 {
     public function EmailIndex(){
-    	$emails=Email::paginate(5);
+    	$emails=Email::paginate(10);
     	$count=Email::all()->count();
     	return view('backend.email.email')->with('emails',$emails)->with('count',$count);
     }
@@ -25,7 +25,7 @@ class EmailController extends Controller
     	$email->email_email=$request->email;
     	$email->data_email=$date;
     	$email->content_email=$request->contenido;
-
+        $email->renta_email=$request->renta;
     	$email->banmedica_email=$request->banmedica;
     	$email->colmena_email=$request->colmena;
     	$email->consalud_email=$request->consalud;
@@ -33,7 +33,11 @@ class EmailController extends Controller
     	$email->vidatres_email=$request->vidatres;
     	$email->masvida_email=$request->masvida;
     	$email->save();
-    	
-    	return "ok";
+
+    	session()->flash('messaje',[
+           'alert'=>'success',
+            'text'=>'Se ha enviado correctamente su información'
+        ]);
+    	return redirect()->route('index');
     }
 }

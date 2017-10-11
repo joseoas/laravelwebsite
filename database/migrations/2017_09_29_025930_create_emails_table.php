@@ -19,6 +19,7 @@ class CreateEmailsTable extends Migration
             $table->string('phone_email');
             $table->string('address_email');
             $table->string('email_email');
+            $table->string('renta_email');
             $table->string('content_email',2000);
             $table->integer('banmedica_email')->default(1);
             $table->integer('colmena_email')->default(1);
@@ -26,7 +27,6 @@ class CreateEmailsTable extends Migration
             $table->integer('cruzblanca_email')->default(1);
             $table->integer('vidatres_email')->default(1);
             $table->integer('masvida_email')->default(1);
-
             $table->date('data_email');
             $table->timestamps();
         });

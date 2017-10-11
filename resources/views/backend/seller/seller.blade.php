@@ -23,6 +23,7 @@
 										      <th>Nombre</th>
 										      <th>E-Mail</th>
 										      <th>Isapre</th>
+										      <th>Fecha</th>
 										      <th>Accion</th>
 										    </tr>
 										  </thead>
@@ -35,25 +36,19 @@
 												      <td>{{$seller->name_seller." ".$seller->lastname_seller}}</td>
 												      <td>{{$seller->email_seller}}</td>
 												      <td>{{$seller->name_isapre}}</td>
+												      <td>{{$seller->created_at}}</td>
 
-												      	<td>
-												      		<div class="row">
-												      			<div class="col-md-4 text-lefet">
-												      				<a href="{{route('sellers.edit',$seller->id)}}"	class="btn btn-info">
+													    <td>
+														     <form action="{{route('sellers.destroy',$seller->id)}}" method="POST">
+														     		<a href="{{route('sellers.edit',$seller->id)}}"	class="btn btn-info btn-sm">
 												      					<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar
 												      				</a>
-												      			</div>
 
-												      			<div class="col-md-8 text-left">
-												      				<form action="{{route('sellers.destroy',$seller->id)}}" method="POST">
-															      		{{csrf_field()}}
-															      		{{method_field('DELETE')}}
-															      		<button class="btn btn-danger" type="submit"><i class="fa fa-eraser" aria-hidden="true"></i> Eliminar</button>
-												      				</form>
-												      			</div>
-
-												      		</div>												
-												      	</td>
+																	{{csrf_field()}}
+																	{{method_field('DELETE')}}
+																	<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-eraser" aria-hidden="true"></i> Eliminar</button>
+															 </form>
+													    </td>
 											      	</tr>
 										    @endforeach
 

@@ -36,22 +36,21 @@
 												      <td>{{$isapre->updated_at}}</td>
 
 												      <td>
-												      		<div class="row">
-												      			<div class="col-md-3 text-lefet">
-												      				<a href="{{route('isapres.edit',$isapre->id)}}"	class="btn btn-info">
-												      					<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar
-												      				</a>
-												      			</div>
+												      	
+												      		
 
-												      			<div class="col-md-9 text-left">
+												      		
 												      				<form action="{{route('isapres.destroy',$isapre->id)}}" method="POST">
 															      		{{csrf_field()}}
 															      		{{method_field('DELETE')}}
-															      		<button class="btn btn-danger" type="submit"><i class="fa fa-eraser" aria-hidden="true"></i> Eliminar</button>
-												      				</form>
-												      			</div>
 
-												      		</div>
+												      				<a href="{{route('isapres.edit',$isapre->id)}}"	class="btn btn-info btn-sm">
+												      					<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar
+												      				</a>
+															      		<button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-eraser" aria-hidden="true"></i> Eliminar</button>
+												      				</form>
+												      			
+
 												
 
 												      </td>

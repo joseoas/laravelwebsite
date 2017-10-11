@@ -29,6 +29,7 @@ class EmailRequest extends FormRequest
             'email'=>'required|max:70',
             'ciudad'=>'required|max:150',
             'contenido'=>'required',
+            'renta'=>'required',
         ];
     }
 }

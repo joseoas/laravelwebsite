@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
+        
+        <title>Cotiza Isapre Chile</title>
 
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="{{asset('bootstrap/css/bootstrap.css')}}">
@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top " >
                 <div class="container">
                       <a class="navbar-brand" href="#">
-                      <img src="{{asset('images/logo.png')}}" height="40px" width="65px">Cotiza<strong>IsapreChile</strong>
+                      <img src="{{asset('images/logo.png')}}" height="40px" width="41px" alt="cotiza isapre chile"> Cotiza<strong>IsapreChile</strong>
                       </a>
 
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,8 +45,7 @@
                           </li>                                                   
                         </ul>
                         
-                            <a class="nav-link" href="#" ><img src="{{asset('images/facebook.png')}}"></a>
-                            <a class="nav-link" href="#" ><img src="{{asset('images/youtube.png')}}"></a>
+                         
                         </div>
 
                       </div>
@@ -70,7 +69,7 @@
     <div class="container">
           <div class="row">
             <div class="col-md-1 text-left">
-                  <img src="{{asset('images/logo.png')}}" height="68" width="100">
+                  <img src="{{asset('images/logo.png')}}" height="68" width="70" alt="cotiza isapre chile">
             </div>
             <div class="col-md-4 text-left">
                 <h3>Cotiza<strong>IsapreChile</strong></h3>
